@@ -2,7 +2,9 @@
 
 ## Team members
 
-- Add all the names of all the team members
+- Nafisa
+- Mamadou
+- Joohong
 
 ## Live Demo
 
