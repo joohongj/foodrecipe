@@ -1,0 +1,271 @@
+/* border-box fix */
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  /* remove margin and padding on body */
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #ffffff;
+  font-family: "Unna", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Grouping example */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+.wrapper {
+  background: #ffffff;
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4 1fr);
+  grid-template-rows: repeat (2, 250px);
+  max-width: 1200px;
+}
+
+/* padding on immediate children of wrapper */
+.wrapper>* {
+  padding: 20px;
+}
+
+header {
+  background: #ffffff;
+  grid-column: 1 / 13;
+  text-align: center;
+  font-family: "Unna", serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: large;
+  color: #38312F;
+
+}
+
+
+/* even though it's png, it doesnt show transparent */
+.logo img {
+  position: relative;
+  width: 30px;
+  animation: wiggle 1s ease-in-out;
+
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(30deg);
+  }
+
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  75% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+nav {
+  background: #ffffff;
+  grid-column: 1 / 13;
+  grid-row: 2 / 3;
+  text-align: center;
+  border-top: solid #000000;
+}
+
+nav ul {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 10%;
+  width: 200px;
+  height: 50px;
+  padding: 12px 20px;
+  text-align: center;
+  margin: 4px 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 22px;
+}
+
+nav a:hover {
+  color: #e93c11;
+}
+
+h2,
+h3,
+h4,
+p {
+  color: #000000;
+
+}
+
+/* how to select each grid's opacity?????
+.sectionOne :hover,
+.sectionTwo :hover,
+.sectionThree :hover,
+main :hover,
+aside :hover,
+.sectionSix :hover {
+  opacity: 0.6;
+} */
+
+/* ABOUT section */
+
+span {
+  color: #000000;
+  font-size: 17px;
+}
+
+.sectionOne:hover .readmore,
+.sectionTwo:hover .readmore,
+.sectionThree:hover .readmore,
+main:hover .readmore,
+aside:hover .readmore,
+.sectionSix:hover .readmore {
+  opacity: 1;
+  background-color: #e93c11;
+}
+
+/* feature section */
+/* 
+div.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+div.featureupdated {
+  text-align: right;
+}
+
+div.featuretext p {
+  color: #333;
+  font-size: 18px;
+}
+
+.featuremain {
+  grid-column: 1 / 13;
+  grid-row: 3 / 12;
+  border: transparent 50px solid;
+  margin: 0px 100px 0 100px;
+} */
+
+/* feature advertisement */
+
+.adanimation {
+  position: relative;
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.adanimation img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: switch 6s infinite ease-in-out;
+}
+
+@keyframes switch {
+  0% {
+    opacity: 1;
+  }
+
+  27% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  94% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.adanimation img:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.adanimation img:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.adanimation img:nth-child(3) {
+  animation-delay: 4s;
+}
+
+/* footer */
+
+footer {
+  background: #ffffff;
+  grid-column: 1 / 13;
+  border-top: solid #000000;
+  margin-top: 50px
+}
+
+footer {
+  background-color: #f9e8e8;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #333;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
