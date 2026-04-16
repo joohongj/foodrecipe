@@ -18,12 +18,9 @@ body {
   background-color: #ffffff;
 }
 
-/* Grouping example */
 h1,
 h2,
-h3,
-h4,
-h5 {
+h3 {
   text-transform: uppercase;
 }
 
@@ -53,6 +50,12 @@ header {
 
 }
 
+h1,
+h2 {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 /* even though it's png, it doesnt show transparent */
 .logo img {
@@ -122,76 +125,24 @@ nav a:hover {
   color: #e93c11;
 }
 
-h2,
-h3,
-h4,
-p {
-  color: #000000;
-
-}
-
-/* how to select each grid's opacity?????
-.sectionOne :hover,
-.sectionTwo :hover,
-.sectionThree :hover,
-main :hover,
-aside :hover,
-.sectionSix :hover {
-  opacity: 0.6;
-} */
-
-/* ABOUT section */
-
-span {
-  color: #000000;
-  font-size: 17px;
-}
-
-.sectionOne:hover .readmore,
-.sectionTwo:hover .readmore,
-.sectionThree:hover .readmore,
-main:hover .readmore,
-aside:hover .readmore,
-.sectionSix:hover .readmore {
-  opacity: 1;
-  background-color: #e93c11;
-}
-
-/* feature section */
-/* 
-div.profile {
+.sponsor {
   display: flex;
-  align-items: center;
-  gap: 20px;
 }
 
-div.featureupdated {
-  text-align: right;
-}
 
-div.featuretext p {
-  color: #333;
-  font-size: 18px;
-}
 
-.featuremain {
-  grid-column: 1 / 13;
-  grid-row: 3 / 12;
-  border: transparent 50px solid;
-  margin: 0px 100px 0 100px;
-} */
-
-/* feature advertisement */
-
+/* could any of you place this center? */
 .adanimation {
   position: relative;
   width: 600px;
-  height: 100px;
+  height: 135px;
   margin: 0 auto;
+  /* align-items: center; */
 }
 
 .adanimation img {
   position: absolute;
+  display: flex;
   top: 0;
   left: 0;
   width: 100%;
