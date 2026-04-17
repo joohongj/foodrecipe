@@ -1,7 +1,7 @@
 // Adding key from USDA --- practicing
 
 const API_KEY = 'STWwkht5v3tvyc3fyne7cdTZqB1Z3W4WwuAZKLWe';
-// This has to be changed
+// needs to change
 const query = 'pasta';
 
 const url = `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${STWwkht5v3tvyc3fyne7cdTZqB1Z3W4WwuAZKLWe}&query=${query}`;
