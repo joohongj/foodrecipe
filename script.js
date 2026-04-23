@@ -1,5 +1,7 @@
 const API_KEY = "i7hz2ELaeGGhzsdSqEnxIG7SbPuZXLjvNBX8Iat1";
 
+let totalCalories = 0;
+
 // runs when button is clicked
 function searchFood() {
 
@@ -11,16 +13,16 @@ function searchFood() {
   }
 
   let url = "https://api.nal.usda.gov/fdc/v1/foods/search?api_key="
-            + API_KEY + "&query=" + input;
+    + API_KEY + "&query=" + input;
 
   fetch(url)
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       displayFood(data.foods);
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log("Error:", error);
     });
 }
@@ -48,14 +50,14 @@ function displayFood(foodList) {
     let name = food.description;
     let brand = food.brandOwner ? food.brandOwner : "No brand";
 
-    let calories = "Not available";
+    let calories = 0;
 
     // tell about calories
     for (let j = 0; j < food.foodNutrients.length; j++) {
       let nutrient = food.foodNutrients[j];
 
       if (nutrient.nutrientName === "Energy") {
-        calories = nutrient.value + " kcal";
+        calories = nutrient.value;
       }
     }
 
@@ -64,9 +66,34 @@ function displayFood(foodList) {
 
     div.innerHTML =
       "<h3>" + name + "</h3>" +
-      "<p><b>Calories:</b> " + calories + "</p>" +
-      "<p><b>Brand:</b> " + brand + "</p>";
+      "<p><b>Calories:</b> " + calories + " kcal</p>" +
+      "<p><b>Brand:</b> " + brand + "</p>" +
+      "<button onclick='addToPlate(" + calories + ")'>Add</button>"
 
     container.appendChild(div);
   }
+}
+
+// add calories to totaal
+
+function addToPlate(cal) {
+
+  let number = parseFloat(cal);
+
+  if (!isNaN(number)) {
+    totalCalories += number;
+  }
+  document.getElementById("total").innerHTML =
+    "Total Calories: " + totalCalories + "Kcal";
+}
+
+function randomFood() {
+
+  let foods = ["pizza", "burger", "cake", "salad", "pasta"];
+
+  let random = foods[Math.floor(Math.random() * foods.length)];
+
+  document.getElementById("searchInput").value = random;
+
+  searchFood();
 }
