@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  /* remove margin and padding on body */
   padding: 0;
   margin: 0;
   height: 100%;
@@ -28,7 +29,7 @@ h3 {
   width: 90%;
   margin: 0 auto;
   display: grid;
-  /* Fixed missing comma here */
+  /* FIXED: added comma so grid works correctly */
   grid-template-columns: repeat(4, 1fr);
   max-width: 1200px;
 }
@@ -121,19 +122,35 @@ nav a:hover {
   color: #e93c11;
 }
 
-/* NEW: Search Bar & Results Styling */
+/* --- NEW: Search Container Styles --- */
 .search-container {
   grid-column: 1 / 13;
   text-align: center;
   padding: 20px;
 }
 
+.search-container input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #000;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #38312F;
+  color: white;
+  border: none;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 18px;
+}
+
 #results {
   grid-column: 1 / 13;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px 0;
 }
 
 .food-card {
@@ -142,18 +159,19 @@ nav a:hover {
   text-align: center;
 }
 
-/* UPDATED: Fix for wide images (Crate & Barrel, etc) */
+/* ------------------------------------ */
+
 .sponsor {
   display: flex;
   justify-content: center;
+  /* Center the sponsors */
   flex-wrap: wrap;
-  gap: 20px;
 }
 
+/* FIXED: Prevent wide images from breaking layout (The Joo Fix) */
 .sponsor img,
 .adanimation img {
   max-width: 100%;
-  /* Keeps images from breaking page width */
   height: auto;
   object-fit: contain;
 }
@@ -161,12 +179,12 @@ nav a:hover {
 .adanimation {
   position: relative;
   width: 100%;
-  /* Changed from 600px to 100% for better responsiveness */
+  /* Changed from 600px for responsiveness */
   max-width: 600px;
   height: 135px;
   margin: 0 auto;
   overflow: hidden;
-  /* Safety net for layout */
+  /* Safety net to contain images */
 }
 
 .adanimation img {
@@ -215,12 +233,12 @@ nav a:hover {
 
 /* footer */
 footer {
-  background-color: #f9e8e8;
   grid-column: 1 / 13;
-  border-top: solid #000000;
+  background-color: #f9e8e8;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
+  border-top: solid #000000;
 }
 
 footer ul {
