@@ -124,7 +124,7 @@ function randomDessert() {
 
 const frame = document.querySelector('.frame');
 let currentItem = 0;
-let totalItems = 10;
+let totalItems = 100;
 
 async function getData() {
   const searchData = await fetch(
@@ -133,7 +133,7 @@ async function getData() {
 
   const searchDataJson = await searchData.json();
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 100; i++) {
 
     const id = searchDataJson.objectIDs[i];
 
