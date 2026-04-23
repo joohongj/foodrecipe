@@ -113,8 +113,8 @@ nav {
   grid-row: 2 / 3;
   text-align: center;
   border-top: solid #000000;
-  font-family: "Amatic SC", sans-serif;
-  font-weight: 700;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -160,10 +160,13 @@ nav a:hover {
 }
 
 .search-page h1,
-.search-page h2,
-.search-page h3,
 .search-page p {
   margin: 5px 0;
+}
+
+.search-page h2,
+.search-page h3 {
+  font-size: x-large;
 }
 
 .search-page .search-area {
