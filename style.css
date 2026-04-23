@@ -61,7 +61,17 @@ h2 {
   position: relative;
   width: 50px;
   animation: wiggle 1s ease-in-out;
+   height: auto;
 
+}
+
+/* Added code here to fix the logo*/
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* prevents overflow */
 }
 
 @keyframes wiggle {
