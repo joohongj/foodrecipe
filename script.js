@@ -63,19 +63,19 @@ function displayFood(foodList) {
 
     let div = document.createElement("div");
     div.className = "food-card";
-    
-   let button = "";
 
-// check if NOT on dessert page
-if (!window.location.href.includes("dessert")) {
-  button = "<button onclick='addToPlate(" + calories + ")'>Add</button>";
-}
+    let button = "";
 
-div.innerHTML =
-  "<h3>" + name + "</h3>" +
-  "<p><b>Calories:</b> " + calories + " kcal</p>" +
-  "<p><b>Brand:</b> " + brand + "</p>" +
-  button;
+    // check if NOT on dessert page
+    if (!window.location.href.includes("dessert")) {
+      button = "<button onclick='addToPlate(" + calories + ")'>Add</button>";
+    }
+
+    div.innerHTML =
+      "<h3>" + name + "</h3>" +
+      "<p><b>Calories:</b> " + calories + " kcal</p>" +
+      "<p><b>Brand:</b> " + brand + "</p>" +
+      button;
     container.appendChild(div);
   }
 }
@@ -95,7 +95,7 @@ function addToPlate(cal) {
 
 function randomFood() {
 
-  let foods = ["pizza", "burger", "cake", "salad", "pasta"];
+  let foods = ["pizza", "burger", "cake", "salad", "pasta", "sandwich", "fries", "tacos", "hot dogs"];
 
   let random = foods[Math.floor(Math.random() * foods.length)];
 
@@ -114,7 +114,7 @@ function quickDessert(item) {
 // random buttons
 function randomDessert() {
 
-  let desserts = ["cake", "ice cream", "cookies", "donut", "brownie"];
+  let desserts = ["cake", "ice cream", "cookies", "donut", "brownie", "milk shake", "pudding", "cheese cake", "chocolate cake", "cup cakes", "fruit cake", "sweets", "chocolates", "cotton candy"];
 
   let random = desserts[Math.floor(Math.random() * desserts.length)];
 
