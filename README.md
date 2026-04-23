@@ -17,7 +17,7 @@
 
 ## Features
 
-- **Dynamic Search**: Users can input any food item into a search bar to fetch real-time nutritional data from the USDA database.
+- **Dynamic Search**: Users can input any food item into a search bar to fetch real real time nutritional data from the USDA database.
 - **Responsive Layout**: The data is presented in a flexible grid system that adapts to the user's screen size, ensuring a clear view of food categories and descriptions.
 - **Interactive UI Animations**: The site features a custom "wiggle" logo animation and a "flashy" advertisement switcher to enhance user engagement.
 
