@@ -37,7 +37,7 @@ function displayFood(foodList) {
     return;
   }
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) {
 
     if (i >= foodList.length) {
       break;
