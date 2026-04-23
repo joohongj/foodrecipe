@@ -128,7 +128,7 @@ let totalItems = 100;
 
 async function getData() {
   const searchData = await fetch(
-    "https://collectionapi.metmuseum.org/public/collection/v1/search?q=food&hasImages=true"
+    "https://collectionapi.metmuseum.org/public/collection/v1/search?q=meal&hasImages=true"
   );
 
   const searchDataJson = await searchData.json();
