@@ -1,5 +1,4 @@
-
-const API_KEY = 'STWwkht5v3tvyc3fyne7cdTZqB1Z3W4WwuAZKLWe';
+const API_KEY = "i7hz2ELaeGGhzsdSqEnxIG7SbPuZXLjvNBX8Iat1";
 
 // runs when button is clicked
 function searchFood() {
@@ -51,7 +50,7 @@ function displayFood(foodList) {
 
     let calories = "Not available";
 
-    // find calories
+    // tell about calories
     for (let j = 0; j < food.foodNutrients.length; j++) {
       let nutrient = food.foodNutrients[j];
 
