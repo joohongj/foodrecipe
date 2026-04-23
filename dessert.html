@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Just+Another+Hand&family=Love+Light&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Zen+Loop:ital@0;1&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fjalla+One&family=Just+Another+Hand&family=Love+Light&family=Nanum+Brush+Script&family=Nanum+Pen+Script&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Zen+Loop:ital@0;1&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 
@@ -24,13 +24,29 @@
     </header>
     <nav>
       <ul>
-        <li><a href="about.html">About US</a></li>
-        <li><a href="food.html">Food Recipe</a></li>
+        <li><a href="about.html">Food News</a></li>
+        <li><a href="food.html">Search Food</a></li>
         <li><a href="dessert.html">Dessert Recipe</a></li>
 
       </ul>
     </nav>
+    <h2>Dessert Finder </h2>
 
+    <div class="search-section">
+      <input type="text" id="searchInput" placeholder="Search desserts...">
+      <button onclick="searchFood()">Search</button>
+      <button onclick="randomDessert()"> Surprise Me</button>
+    </div>
+
+    <!-- Quick dessert buttons -->
+    <div class="quick-buttons">
+      <button onclick="quickDessert('cake')">Cake</button>
+      <button onclick="quickDessert('ice cream')">Ice Cream</button>
+      <button onclick="quickDessert('cookies')">Cookies</button>
+      <button onclick="quickDessert('chocolate')">Chocolate</button>
+    </div>
+
+    <div id="results"></div>
 
     <!--Nafisa's code for script.js, please look at it first -->
 
@@ -55,8 +71,8 @@
     <footer>
       &copy; Nafisa, Mamadou & Joo
       <ul>
-        <li><a href="https://fdc.nal.usda.gov/api-guide" target="_blank">USDA API</a></li>
-        <li><a href="https://stock.adobe.com/" target="_blank">Adobe Stock</a></li>
+        <li><a href="https://fdc.nal.usda.gov/api-guide" class="footerp" target="_blank">USDA API</a></li>
+        <li><a href="https://stock.adobe.com/" class="footerp" target="_blank">Adobe Stock</a></li>
       </ul>
     </footer>
   </div>
