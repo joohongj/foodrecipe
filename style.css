@@ -29,14 +29,25 @@ h3 {
   width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   grid-auto-rows: minmax(150px, auto);
-  gap: 8px;
+  gap: 20px;
   max-width: 1200px;
 }
 
 .wrapper>* {
   padding: 10px;
+}
+
+header,
+nav,
+h2,
+.search-section,
+.quick-buttons,
+.dessert-images,
+.adanimation,
+footer {
+  width: 100%;
 }
 
 header {
@@ -55,17 +66,18 @@ header {
   width: 50px;
   animation: wiggle 1s ease-in-out;
   height: auto;
-
-  /* Added code here to fix the logo*/
-  .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    /* prevents overflow */
-  }
 }
+
+/* Added code here to fix the logo*/
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  /* prevents overflow */
+}
+
 
 h1,
 h2,
@@ -187,10 +199,9 @@ nav a:hover {
 }
 
 .search-section {
-  grid-column: 1 / 3;
+  /* grid-column: 1 / 3; */
   display: flex;
   align-items: center;
-  margin: 0;
 }
 
 .search-box {
@@ -202,7 +213,7 @@ nav a:hover {
   overflow: hidden;
   background: #fff;
   justify-content: center;
-  margin: 50px;
+  margin: 20px auto;
   grid-column: 1 / -1;
 }
 
@@ -226,6 +237,29 @@ nav a:hover {
 }
 
 .search-box button:hover {
+  background: #e93c11;
+}
+
+/* quick button styling */
+.quick-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.quick-buttons button {
+  padding: 10px 16px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 50px;
+  width: 150px;
+}
+
+.quick-buttons button:hover {
   background: #e93c11;
 }
 
@@ -500,17 +534,21 @@ footer a:hover {
   text-decoration: underline;
 }
 
+
+/* dessert page */
+
 .dessert-images {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   justify-content: center;
   gap: 20px;
   margin: 20px;
 }
 
 .dessert-images img {
-  width: 200px;
+  width: 100%;
   border-radius: 10px;
-  cursor: pointer;
 }
 
 .dessert-images img:hover {
