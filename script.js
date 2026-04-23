@@ -63,7 +63,9 @@ function displayFood(foodList) {
 
     let div = document.createElement("div");
     div.className = "food-card";
-
+    if (!window.location.href.includes("dessert")) {
+      button = "<button onclick='addToPlate(" + calories + ")'>Add</button>";
+    }
     div.innerHTML =
       "<h3>" + name + "</h3>" +
       "<p><b>Calories:</b> " + calories + " kcal</p>" +
@@ -92,6 +94,25 @@ function randomFood() {
   let foods = ["pizza", "burger", "cake", "salad", "pasta"];
 
   let random = foods[Math.floor(Math.random() * foods.length)];
+
+  document.getElementById("searchInput").value = random;
+
+  searchFood();
+}
+
+// buttton for  (cake, cookies, etc.)
+function quickDessert(item) {
+  document.getElementById("searchInput").value = item;
+  searchFood();
+}
+
+
+// random buttons
+function randomDessert() {
+
+  let desserts = ["cake", "ice cream", "cookies", "donut", "brownie"];
+
+  let random = desserts[Math.floor(Math.random() * desserts.length)];
 
   document.getElementById("searchInput").value = random;
 

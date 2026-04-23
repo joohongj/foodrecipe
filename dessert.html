@@ -30,16 +30,22 @@
 
       </ul>
     </nav>
-
-
-    <!--Nafisa's code for script.js, please look at it first -->
+    <h2>Dessert Finder </h2>
 
     <div class="search-section">
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search food...">
-        <button onclick="searchFood()">Search</button>
-      </div>
+      <input type="text" id="searchInput" placeholder="Search desserts...">
+      <button onclick="searchFood()">Search</button>
+      <button onclick="randomDessert()"> Surprise Me</button>
     </div>
+
+    <!-- Quick dessert buttons -->
+    <div class="quick-buttons">
+      <button onclick="quickDessert('cake')">Cake</button>
+      <button onclick="quickDessert('ice cream')">Ice Cream</button>
+      <button onclick="quickDessert('cookies')">Cookies</button>
+      <button onclick="quickDessert('chocolate')">Chocolate</button>
+    </div>
+
     <div id="results"></div>
 
 
