@@ -1,7 +1,5 @@
-// Adding key from USDA --- practicing
-
 const API_KEY = 'STWwkht5v3tvyc3fyne7cdTZqB1Z3W4WwuAZKLWe';
-const query = 'pasta';
+const query = 'chicken';
 
 const url = `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${API_KEY}&query=${query}`;
 
@@ -24,3 +22,7 @@ async function getRecipes() {
 }
 
 getRecipes();
+
+
+/v1/foods/search
+
