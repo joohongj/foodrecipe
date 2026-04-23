@@ -48,6 +48,12 @@
             <button onclick="randomFood()"> Surprise Me</button>
         </div>
 
+        div.innerHTML =
+        "<h3>" + name + "</h3>" +
+        "<p><b>Calories:</b> " + calories + " kcal</p>" +
+        "<p><b>Brand:</b> " + brand + "</p>" +
+        "<button onclick='addToPlate(" + calories + ")'>Add</button>";
+
         <h3 id="total">Total Calories: 0 kcal</h3>
 
         <div id="results"></div>

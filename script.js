@@ -1,5 +1,7 @@
 const API_KEY = "i7hz2ELaeGGhzsdSqEnxIG7SbPuZXLjvNBX8Iat1";
 
+let totalCalories= 0;
+
 // runs when button is clicked
 function searchFood() {
 
@@ -48,7 +50,7 @@ function displayFood(foodList) {
     let name = food.description;
     let brand = food.brandOwner ? food.brandOwner : "No brand";
 
-    let calories = "Not available";
+    let calories = 0;
 
     // tell about calories
     for (let j = 0; j < food.foodNutrients.length; j++) {
@@ -69,4 +71,28 @@ function displayFood(foodList) {
 
     container.appendChild(div);
   }
+}
+
+// add calories to totaal
+
+function addToPlate(cal){
+
+  let number = parseFloat(cal);
+
+  if (!isNaN(number)){
+    totalCalories += number;
+  }
+  document.getElementById("total").innerHTML =
+  "Total Calories: " + totalCalories + "Kcal";
+}
+
+function randomFood() {
+
+  let foods = ["pizza", "burger", "cake", "salad", "pasta"];
+
+  let random = foods[Math.floor(Math.random() * foods.length)];
+
+  document.getElementById("searchInput").value = random;
+
+  searchFood();
 }
