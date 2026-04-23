@@ -118,3 +118,61 @@ function randomDessert() {
 
   searchFood();
 }
+
+
+// food Gallery
+
+const frame = document.querySelector('.frame');
+let currentItem = 0;
+let totalItems = 10;
+
+async function getData() {
+  const searchData = await fetch(
+    "https://collectionapi.metmuseum.org/public/collection/v1/search?q=food&hasImages=true"
+  );
+
+  const searchDataJson = await searchData.json();
+
+  for (let i = 0; i < 10; i++) {
+
+    const id = searchDataJson.objectIDs[i];
+
+    const data = await fetch(
+      `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+    );
+
+    const json = await data.json();
+
+    const image = document.createElement("img");
+    image.src = json.primaryImage;
+
+    // Wrap image in list item 
+
+    const listItem = document.createElement("li");
+    listItem.appendChild(image);
+    if (i === 0) {
+      listItem.classList.add("active");
+    }
+    frame.appendChild(listItem);
+
+  }
+
+}
+
+// Switching between items
+
+function goToItem(index) {
+  const items = frame.querySelectorAll('li');
+  items[currentItem].classList.remove('active');
+  currentItem = index;
+  items[currentItem].classList.add('active');
+}
+
+// Click event to cycle images
+
+frame.addEventListener('click', function () {
+  const nextItem = (currentItem + 1) % totalItems;
+  goToItem(nextItem);
+});
+
+getData();
