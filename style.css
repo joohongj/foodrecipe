@@ -11,7 +11,6 @@ html {
 }
 
 body {
-  /* remove margin and padding on body */
   padding: 0;
   margin: 0;
   height: 100%;
@@ -35,7 +34,6 @@ h3 {
   max-width: 1200px;
 }
 
-/* padding on immediate children of wrapper */
 .wrapper>* {
   padding: 10px;
 }
@@ -138,12 +136,6 @@ nav a:hover {
 
 .search-section {
   grid-column: 1 / 3;
-}
-
-#results {
-  grid-column: 1 / -1;
-  padding: 0;
-  margin: 0;
 }
 
 .adanimation {
