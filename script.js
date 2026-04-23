@@ -63,15 +63,19 @@ function displayFood(foodList) {
 
     let div = document.createElement("div");
     div.className = "food-card";
-    if (!window.location.href.includes("dessert")) {
-      button = "<button onclick='addToPlate(" + calories + ")'>Add</button>";
-    }
-    div.innerHTML =
-      "<h3>" + name + "</h3>" +
-      "<p><b>Calories:</b> " + calories + " kcal</p>" +
-      "<p><b>Brand:</b> " + brand + "</p>" +
-      "<button onclick='addToPlate(" + calories + ")'>Add</button>"
+    
+   let button = "";
 
+// check if NOT on dessert page
+if (!window.location.href.includes("dessert")) {
+  button = "<button onclick='addToPlate(" + calories + ")'>Add</button>";
+}
+
+div.innerHTML =
+  "<h3>" + name + "</h3>" +
+  "<p><b>Calories:</b> " + calories + " kcal</p>" +
+  "<p><b>Brand:</b> " + brand + "</p>" +
+  button;
     container.appendChild(div);
   }
 }
