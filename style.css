@@ -34,10 +34,8 @@ h3 {
   gap: 20px;
   max-width: 1200px;
 }
-
-/* padding on immediate children of wrapper */
-.wrapper>* {
-  padding: 20px;
+.wrapper {
+  align-items: start; 
 }
 
 header {
@@ -141,7 +139,11 @@ nav a:hover {
 }
 
 #results {
-  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* moves to next line if needed */
+  margin-top: 20px;
 }
 
 .adanimation {
@@ -273,11 +275,22 @@ footer a:hover {
 }
 
 #results {
-  width: 60%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* moves to next line if needed */
+  margin-top: 20px;
 }
-
 #total {
   text-align: center;
   margin: 20px;
+}
+
+.food-card {
+  width: 250px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff5f5;
+  text-align: center;
 }
