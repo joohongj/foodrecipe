@@ -22,7 +22,7 @@
 
 ## Technologies Used
 
-  - **Languages**: HTML5, CSS, JavaScript.
+  - **Languages**: HTML, CSS, JavaScript.
   - **APIs**: USDA FoodData Central API (FDC) for real-time food nutritional data.
   - **Tools**: GitHub Pages for hosting, VS Code for development, and Google Fonts for typography.
   - **Design**: Figma for initial UI layout and Adobe Stock for visual assets.
