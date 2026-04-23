@@ -499,3 +499,16 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
+.dessert-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px;
+}
+
+.dessert-images img {
+  width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+}
