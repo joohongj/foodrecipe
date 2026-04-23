@@ -63,7 +63,9 @@ function displayFood(foodList) {
 
     let div = document.createElement("div");
     div.className = "food-card";
-
+    if (!window.location.href.includes("dessert")) {
+      button = "<button onclick='addToPlate(" + calories + ")'>Add</button>";
+    }
     div.innerHTML =
       "<h3>" + name + "</h3>" +
       "<p><b>Calories:</b> " + calories + " kcal</p>" +
