@@ -512,3 +512,7 @@ footer a:hover {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.dessert-images img:hover {
+  transform: scale(1.05);
+}
