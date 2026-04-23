@@ -29,8 +29,9 @@ h3 {
   width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4 1fr);
-  grid-template-rows: repeat (2, 250px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  gap: 20px;
   max-width: 1200px;
 }
 
@@ -47,6 +48,7 @@ header {
   font-family: "Amatic SC", sans-serif;
   font-weight: 700;
   font-style: normal;
+
 }
 
 h1,
@@ -60,7 +62,18 @@ h2 {
   position: relative;
   width: 50px;
   animation: wiggle 1s ease-in-out;
+  height: auto;
 
+}
+
+/* Added code here to fix the logo*/
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  /* prevents overflow */
 }
 
 @keyframes wiggle {
@@ -123,67 +136,31 @@ nav a:hover {
   color: #e93c11;
 }
 
-/* --- NEW: Search Container Styles --- */
-.search-container {
-  grid-column: 1 / 13;
-  text-align: center;
-  padding: 20px;
-}
-
-.search-container input {
-  padding: 10px;
-  width: 250px;
-  border: 1px solid #000;
-}
-
-.search-container button {
-  padding: 10px 20px;
-  cursor: pointer;
-  background-color: #38312F;
-  color: white;
-  border: none;
-  font-family: "Amatic SC", sans-serif;
-  font-size: 18px;
+.search-section {
+  grid-column: 1 / 3;
 }
 
 #results {
-  grid-column: 1 / 13;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  padding: 20px 0;
+  grid-column: 1 / -1;
 }
 
-.food-card {
-  border: 1px solid #000;
-  padding: 10px;
-  text-align: center;
-}
-
-/* ------------------------------------ */
-
-.sponsor {
-  display: flex;
-}
-
-
-/* could any of you place this center? */
 .adanimation {
   position: relative;
-  width: 100%;
-  /* Changed from 600px for responsiveness */
-  max-width: 600px;
+  width: 600px;
   height: 135px;
   margin: 0 auto;
-  /* align-items: center; */
+  grid-column: 3 / 5;
+  align-items: center;
 }
 
 .adanimation img {
   position: absolute;
+  display: flex;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   opacity: 0;
   animation: switch 6s infinite ease-in-out;
 }
@@ -237,22 +214,34 @@ nav a:hover {
 }
 
 .main-news {
-  grid-column: 1 / 2;
+  grid-column: span 1;
 }
 
 .side-news {
-  grid-column: auto;
+  grid-column: span 1;
+}
+
+.sponsor {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  grid-column: 1 / -1;
+}
+
+.sponsor img {
+  width: 120px;
+  height: 50px;
+}
+
+.sponsor-list {
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
 /* footer */
-footer {
-  background: #ffffff;
-  grid-column: 1 / 13;
-  border-top: solid #000000;
-  margin-top: 50px
-}
 
 footer {
+  grid-column: 1 / -1;
   background-color: #f9e8e8;
   text-align: center;
   padding: 20px;
