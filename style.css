@@ -58,7 +58,8 @@ h3 {
   font-style: normal;
 }
 
-p {
+p,
+.date {
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: 250;
