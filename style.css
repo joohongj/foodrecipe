@@ -31,7 +31,7 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(150px, auto);
-  gap: 10px;
+  gap: 8px;
   max-width: 1200px;
 }
 
@@ -50,12 +50,34 @@ header {
 
 }
 
+.logo img {
+  position: relative;
+  width: 50px;
+  animation: wiggle 1s ease-in-out;
+  height: auto;
+
+  /* Added code here to fix the logo*/
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* prevents overflow */
+  }
+}
+
 h1,
 h2,
 h3 {
   font-family: "Fjalla One", sans-serif;
   font-weight: 800;
   font-style: normal;
+}
+
+h1 {
+  margin: 10px 0 0;
+  font-size: 36px;
 }
 
 p,
@@ -67,22 +89,23 @@ p,
   font-style: normal;
 }
 
-.logo img {
-  position: relative;
-  width: 50px;
-  animation: wiggle 1s ease-in-out;
-  height: auto;
 
+.search-page h1 {
+  text-align: center;
+    grid-column: 1 / -1;
 }
 
-/* Added code here to fix the logo*/
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  /* prevents overflow */
+.search-page p {
+  margin: 5px 0;
+}
+
+.search-page h2,
+.search-page h3 {
+  font-size: x-large;
+}
+
+#total {
+  color: rgb(227, 59, 43);
 }
 
 @keyframes wiggle {
@@ -159,25 +182,15 @@ nav a:hover {
   gap: 8px;
 }
 
-.search-page p {
-  margin: 5px 0;
-}
-
-.search-page h2,
-.search-page h3 {
-  font-size: x-large;
-}
-
 .search-page .search-area {
   gap: 6px;
 }
-
 
 .search-section {
   grid-column: 1 / 3;
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  margin: 0;
 }
 
 .search-box {
@@ -188,6 +201,9 @@ nav a:hover {
   border-radius: 30px;
   overflow: hidden;
   background: #fff;
+  justify-content: center;
+  margin: 50px;
+  grid-column: 1 / -1;
 }
 
 .search-box input {
@@ -213,11 +229,12 @@ nav a:hover {
   background: #e93c11;
 }
 
+/* 
 #results {
   grid-column: 1 / -1;
   padding: 0;
   margin: 0;
-}
+} */
 
 .adanimation {
   position: relative;
