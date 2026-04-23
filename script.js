@@ -1,26 +1,73 @@
-// Adding key from USDA --- practicing
 
 const API_KEY = 'STWwkht5v3tvyc3fyne7cdTZqB1Z3W4WwuAZKLWe';
-const query = 'pasta';
 
-const url = `https://api.nal.usda.gov/fdc/v1/foods/search?api_key=${API_KEY}&query=${query}`;
+// runs when button is clicked
+function searchFood() {
 
-async function getRecipes() {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
+  let input = document.getElementById("searchInput").value;
 
-    const container = document.getElementById('results');
-
-    data.foods.forEach(food => {
-      const div = document.createElement('div');
-      div.textContent = food.description;
-      container.appendChild(div);
-    });
-
-  } catch (error) {
-    console.error('Error fetching recipes:', error);
+  if (input === "") {
+    alert("Please enter a food");
+    return;
   }
+
+  let url = "https://api.nal.usda.gov/fdc/v1/foods/search?api_key="
+            + API_KEY + "&query=" + input;
+
+  fetch(url)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      displayFood(data.foods);
+    })
+    .catch(function(error) {
+      console.log("Error:", error);
+    });
 }
 
-getRecipes();
+
+// shows results
+function displayFood(foodList) {
+
+  let container = document.getElementById("results");
+  container.innerHTML = ""; // clear old results
+
+  if (!foodList || foodList.length === 0) {
+    container.innerHTML = "<p>No results found</p>";
+    return;
+  }
+
+  for (let i = 0; i < 5; i++) {
+
+    if (i >= foodList.length) {
+      break;
+    }
+
+    let food = foodList[i];
+
+    let name = food.description;
+    let brand = food.brandOwner ? food.brandOwner : "No brand";
+
+    let calories = "Not available";
+
+    // find calories
+    for (let j = 0; j < food.foodNutrients.length; j++) {
+      let nutrient = food.foodNutrients[j];
+
+      if (nutrient.nutrientName === "Energy") {
+        calories = nutrient.value + " kcal";
+      }
+    }
+
+    let div = document.createElement("div");
+    div.className = "food-card";
+
+    div.innerHTML =
+      "<h3>" + name + "</h3>" +
+      "<p><b>Calories:</b> " + calories + "</p>" +
+      "<p><b>Brand:</b> " + brand + "</p>";
+
+    container.appendChild(div);
+  }
+}
