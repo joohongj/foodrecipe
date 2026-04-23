@@ -41,7 +41,7 @@ h3 {
 
 header {
   background: #ffffff;
-  grid-column: 1 / 13;
+  grid-column: 1 / -1;
   text-align: center;
   color: #38312F;
   font-family: "Amatic SC", sans-serif;
@@ -98,7 +98,7 @@ h2 {
 
 nav {
   background: #ffffff;
-  grid-column: 1 / 13;
+  grid-column: 1 / -1;
   grid-row: 2 / 3;
   text-align: center;
   border-top: solid #000000;
@@ -137,6 +137,13 @@ nav a:hover {
 .sponsor {
   display: flex;
 }
+.sponsor-list {
+  grid-column: 2 / 3;
+}
+
+.search-section {
+  grid-column: 1 / 2;
+}
 
 
 /* could any of you place this center? */
@@ -146,6 +153,7 @@ nav a:hover {
   height: 135px;
   margin: 0 auto;
   /* align-items: center; */
+   grid-column: 3 / 5;
 }
 
 .adanimation img {
@@ -194,11 +202,33 @@ nav a:hover {
   animation-delay: 4s;
 }
 
+/* news section*/
+
+.news-section {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.news-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+}
+
+.main-news {
+  grid-column: 1 / 2;
+}
+
+.side-news {
+  grid-column: auto;
+}
+
 /* footer */
 
 footer {
   background: #ffffff;
-  grid-column: 1 / 13;
+ grid-column: 1 / -1;
   border-top: solid #000000;
   margin-top: 50px
 }
