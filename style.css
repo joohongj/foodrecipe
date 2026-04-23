@@ -59,7 +59,8 @@ h3 {
 }
 
 p,
-.date {
+.date,
+.footerp {
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: 250;
