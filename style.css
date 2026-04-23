@@ -37,7 +37,7 @@ h3 {
 
 /* padding on immediate children of wrapper */
 .wrapper>* {
-  padding: 20px;
+  padding: 10px;
 }
 
 header {
@@ -142,15 +142,17 @@ nav a:hover {
 
 #results {
   grid-column: 1 / -1;
+  padding: 0;
+  margin: 0;
 }
 
 .adanimation {
   position: relative;
   width: 600px;
   height: 135px;
-  margin: 0 auto;
-  grid-column: 3 / 5;
-  align-items: center;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin: 20px 0;
 }
 
 .adanimation img {
@@ -265,19 +267,4 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
-
-.food .search-section {
-  text-align: center;
-  margin: 20px;
-}
-
-#results {
-  width: 60%;
-  margin: 0 auto;
-}
-
-#total {
-  text-align: center;
-  margin: 20px;
 }
